@@ -1,0 +1,6 @@
+{
+  "eslint.validate": ["javascript"],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false
+}

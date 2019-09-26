@@ -1,0 +1,45 @@
+{
+  "name": "bugsnag-plugin-hapi",
+  "version": "6.4.1",
+  "main": "lib/index.js",
+  "description": "@bugsnag/js error handling plugin for Hapi web servers",
+  "homepage": "https://www.bugsnag.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:unbill/bugsnag-hapi.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "test-wip": "jest -t WIP",
+    "test-wip-watch": "jest -t WIP --watchAll",
+    "lint": "eslint ./"
+  },
+  "author": "Q2 Unbill Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "@bugsnag/js": "*"
+  },
+  "dependencies": {
+    "@bugsnag/core": "^6.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-config-standard": "^14.1.0",
+    "jest": "^24.9.0"
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  }
+}
