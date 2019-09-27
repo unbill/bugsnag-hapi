@@ -1,6 +1,6 @@
 {
   "name": "bugsnag-plugin-hapi",
-  "version": "6.4.1",
+  "version": "1.0.4",
   "main": "lib/index.js",
   "description": "@bugsnag/js error handling plugin for Hapi web servers",
   "homepage": "https://www.bugsnag.com/",
