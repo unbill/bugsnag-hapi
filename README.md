@@ -55,7 +55,7 @@ The plugin automatically sets up an object on your Hapi request at:
 To access your request contextualized client:
 `const bugsnagRequestClient = request.app.bugsnag.client`
 
-So at any point where you have access to the request, you can add custom properties that will be reported to bugsnag on error.
+At any point where you have access to the request, you can add custom properties that will be reported to bugsnag on error.
 
 ```javascript
 // Add the current user
