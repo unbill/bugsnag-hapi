@@ -19,7 +19,7 @@ const options = {
 
 // Create your bugsnag client however you like
 const bugsnagClient = bugsnag(options)
-}
+
 ```
 
 ### Register the plugin
@@ -28,21 +28,40 @@ Register the plugin with you Hapi server.
 
 ```javascript
 const buildServer = async () => {
-  // Code that initialized your server goes here...
+  // Code that initializes your server
   const server = hapi.Server({
     port: 4000,
-    // Any other options go here etc...
+    // Any other server options go here...
   }
 
+  // **** The important part ****
   // Register the plugin, passing in the client you created earlier
   bugsnagPlugin.register(server, { client: bugsnagClient })
+
   // Register other things etc...
   onRequest(server)
-  onPostAuth(server)
   onPreResponse(server)
-
   routes.register(server)
 
   return server
 }
+```
+
+### Easily add properties to your bugsnag context
+
+The plugin automatically sets up an object on your Hapi request at:
+`request.app.bugsnag`
+
+To access your request contextualized client:
+`const bugsnagRequestClient = request.app.bugsnag.client`
+
+So at any point where you have access to the request, you can add custom properties that will be reported to bugsnag on error.
+
+```javascript
+// Add the current user
+request.app.bugsnag.data.user = { id: someObject.userId }
+
+// Add some data to an existing section or create a new section
+// In this case creating a new partner section
+request.app.bugsnag.data.partner = { id: partnerId, name: 'My partner name' }
 ```
