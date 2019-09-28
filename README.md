@@ -24,7 +24,7 @@ const bugsnagClient = bugsnag(options)
 
 ### Register the plugin
 
-Register the plugin with you Hapi server.
+Register the plugin with your Hapi server.
 
 ```javascript
 const buildServer = async () => {
