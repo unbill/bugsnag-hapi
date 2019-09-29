@@ -49,19 +49,19 @@ const buildServer = async () => {
 
 ### Easily add properties to your bugsnag context
 
-The plugin automatically sets up an object on your Hapi request at:
+The plugin automatically sets up a contextualized bugsnag client on your Hapi request at:
 `request.app.bugsnag`
 
 To access your request contextualized client:
-`const bugsnagRequestClient = request.app.bugsnag.client`
+`const bugsnagRequestClient = request.app.bugsnag`
 
 At any point where you have access to the request, you can add custom properties that will be reported to bugsnag on error.
 
 ```javascript
 // Add the current user
-request.app.bugsnag.data.user = { id: someObject.userId }
+request.app.bugsnag.user = { id: someObject.userId }
 
 // Add some data to an existing section or create a new section
 // In this case creating a new partner section
-request.app.bugsnag.data.partner = { id: partnerId, name: 'My partner name' }
+request.app.bugsnag.metaData.partner = { id: partnerId, name: 'My partner name' }
 ```
